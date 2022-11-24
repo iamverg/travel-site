@@ -1,6 +1,11 @@
 .primary-nav {
-  &--pull-right {
-    float: right;
+  padding-top: 10px;
+
+  @mixin atMedium {
+    padding-top: 0;
+    &--pull-right {
+      float: right;
+    }
   }
 
   ul {
@@ -11,8 +16,22 @@
   }
   li {
     list-style: none;
-    float: left;
-    padding-right: 20px;
+    display: inline-block;
+    padding-right: 7px;
+
+    @mixin atMedium {
+      float: left;
+      display: block;
+      padding-right: 20px;
+    }
+  }
+
+  li:last-child {
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-right: 20px;
+    }
   }
 
   a {
@@ -20,7 +39,15 @@
     text-decoration: none;
     font-weight: 300;
     display: block;
-    padding-bottom: 12px;
-    padding-top: 12px;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    background-color: $mainRgbaStrong;
+
+    @mixin atMedium {
+      font-size: 1rem;
+      padding-bottom: 12px;
+      padding-top: 12px;
+      background-color: transparent;
+    }
   }
 }
