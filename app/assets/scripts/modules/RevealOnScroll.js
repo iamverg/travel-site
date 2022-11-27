@@ -14,7 +14,6 @@ export default class RevealOnScroll {
   events() {
     window.addEventListener("scroll", this.scrollThrottle);
     window.addEventListener("resize", debounce(() => {
-      console.log("rijdijasidjaisj");
       this.browserHeight = window.innerHeight;
     }, 333));
   }
