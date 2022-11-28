@@ -20,7 +20,7 @@ export default class StickyHeader {
   runOnScroll() {
     this.determineScrollDirection();
 
-    if(window.scrollY > 60) {
+    if (window.scrollY > 60) {
       this.siteHeader.classList.add("site-header--dark");
     }
     else {
@@ -44,13 +44,10 @@ export default class StickyHeader {
     if (window.scrollY + this.browserHeight > el.offsetTop && window.scrollY < el.offsetTop + el.offsetHeight) {
 
       let scrollPercent = el.getBoundingClientRect().top / this.browserHeight * 100;
-      if(scrollPercent < 18 && scrollPercent > -0.1 && this.scrollDirection == 'down' || scrollPercent < 33 && this.scrollDirection == 'up') {
-        console.log("hi");
+      if (scrollPercent < 18 && scrollPercent > -0.1 && this.scrollDirection == 'down' || scrollPercent < 33 && this.scrollDirection == 'up') {
         let matchingLink = el.getAttribute("data-matching-link");
         document.querySelectorAll(`.primary-nav a:not(${matchingLink})`).forEach(el => el.classList.remove("is-current-link"));
-        console.log("test");
         document.querySelector(matchingLink).classList.add("is-current-link");
-        console.log("hi");
       }
     }
   }
